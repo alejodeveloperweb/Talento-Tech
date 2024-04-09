@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Personal/Documents/Analytic/Universidad.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1440"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainlogin"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE login(correo varchar(30),
+				   usuario varchar(30),
+				   password varchar(30)
+);
+
+CREATE TABLE carrera(idCarrera INTEGER PRIMARY KEY AUTOINCREMENT,
+				     nombre varchar(30),
+					 dureacion INTEGER
+);
+
+CREATE TABLE alumno(idAlumno INTEGER PRIMARY KEY AUTOINCREMENT,
+					id_Carrera INTEGER,
+					nombre varchar(30),
+					appPaterno varchar(30),
+					appMaterno varchar(30),
+					email varchar(30),
+					FOREIGN KEY(id_Carrera) REFERENCES carrera (idCarrera)
+);
+
+
+INSERT INTO carrera(nombre, dureacion) VALUES('Ingenieria informatica', 10)
+INSERT INTO carrera(nombre, dureacion) VALUES('Ingenieria biomedica', 8);
+INSERT INTO carrera(nombre, dureacion) VALUES('Ingenieria ambiental', 9);
+INSERT INTO carrera(nombre, dureacion) VALUES('Ingenieria en datos', 10);
+INSERT INTO carrera(nombre, dureacion) VALUES('Ingenieria electrica', 10);
+
+INSERT INTO alumno(id_Carrera, nombre, appPaterno, appMaterno, email) VALUES(1,'Alejandro', 'Holguin', 'Pabon', 'ah@gmail.com')
+INSERT INTO alumno(id_Carrera, nombre, appPaterno, appMaterno, email) VALUES(2,'Luis', 'Holguin', 'Pabon', 'ah@gmail.com');
+INSERT INTO alumno(id_Carrera, nombre, appPaterno, appMaterno, email) VALUES(3,'Maria', 'Holguin', 'Pabon', 'ah@gmail.com');
+
+SELECT * FROM carrera;INSERT INTO alumno(id_Carrera, nombre, appPaterno, appMaterno, email) VALUES(1,'Alejandro', 'Holguin', 'Pabon', 'ah@gmail.com')
+
+
+SELECT * FROM carrera;
+
+UPDATE carrera SET nombre='Medicina', duracion=9 WHERE idCarrera=1</sql><current_tab id="0"/></tab_sql></sqlb_project>
